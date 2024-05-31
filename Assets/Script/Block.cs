@@ -8,7 +8,6 @@ public class Block : MonoBehaviour
     //何かとぶつかったときビルトインメソッド
     private void OnCollisionEnter(Collision collision)
     {
-        ScoreScript.instance.ScrerManager(score);   
 
         //ゲームオブジェクトを削除
         Destroy(gameObject);
