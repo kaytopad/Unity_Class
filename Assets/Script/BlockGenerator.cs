@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class BlockGenerator : MonoBehaviour
 {
-    //GameObject‚Ì’Ç‰Á
+    //GameObjectï¿½Ì’Ç‰ï¿½
     public GameObject blockPrefab;
-    //ƒXƒpƒ“
+    //ï¿½Xï¿½pï¿½ï¿½
     float span = 0.3f;
     int row = 4;
     int col = 7;
@@ -15,21 +15,24 @@ public class BlockGenerator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //ƒuƒƒbƒN‚Ìƒ|ƒWƒVƒ‡ƒ“
+        //ï¿½uï¿½ï¿½ï¿½bï¿½Nï¿½Ìƒ|ï¿½Wï¿½Vï¿½ï¿½ï¿½ï¿½
         int px,py;
         px = -7; py = 5;
-        //ƒuƒƒbƒN‚Ì”z’u
+        int scoreDefult = 0;
+        //ï¿½uï¿½ï¿½ï¿½bï¿½Nï¿½Ì”zï¿½u
         for (int i = 0; i < row; i++)
         {
             
             for(int j = 0; j < col; j++)
             {
-                //ƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚Ì¶¬
+                //ï¿½Qï¿½[ï¿½ï¿½ï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½Ìï¿½ï¿½ï¿½
                 GameObject go = Instantiate(blockPrefab);
                 go.transform.position = new Vector3(px+(j * (span + BlockScaleX)), py + (i * (span + BlockScaleY)), 0);
             }
 
         }
+
+        ScoreScript.instance.ScoreManager(scoreDefult);
     }
 
     // Update is called once per frame
