@@ -9,8 +9,14 @@ public class Block : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         // スコアをScoreScriptに追加
-        ScoreScript.instance.ScoreManager(score);
-
+        if (ScoreScript.instance != null)
+        {
+            ScoreScript.instance.ScoreManager(score);
+        }
+        else
+        {
+            Debug.LogError("ScoreScript instance is not set.");
+        }
         // ゲームオブジェクトを削除
         Destroy(gameObject);
     }

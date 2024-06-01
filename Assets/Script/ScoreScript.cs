@@ -39,6 +39,6 @@ public class ScoreScript : MonoBehaviour
     // スコアをTextコンポーネントに表示するメソッド
     private void UpdateScoreText()
     {
-        scoreText.text = "Score: " + totalScore.ToString();
+        this.scoreText.GetComponent<TextMeshProUGUI>().text = "Score: " + totalScore.ToString();
     }
 }
