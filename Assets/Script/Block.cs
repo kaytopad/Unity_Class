@@ -23,11 +23,8 @@ public class Block : MonoBehaviour
         {
             Debug.LogError("ScoreScript instance is not set.");
         }
-<<<<<<< HEAD
         //トータルブロックの削除メソッド
         generator.BlocklDestroyed();
-=======
->>>>>>> a2691bbb123b82f7daef184b29f349e0c3e16111
         // ゲームオブジェクトを削除
         Destroy(gameObject);
     }
