@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class BlockGenerator : MonoBehaviour
 {
     //GameObject�̒ǉ�
@@ -12,6 +12,7 @@ public class BlockGenerator : MonoBehaviour
     int col = 7;
     int BlockScaleX = 2;
     int BlockScaleY = 1;
+    int totalBlocks = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +20,7 @@ public class BlockGenerator : MonoBehaviour
         int px,py;
         px = -7; py = 5;
         int scoreDefult = 0;
+        totalBlocks = row * col;
         //�u���b�N�̔z�u
         for (int i = 0; i < row; i++)
         {
@@ -35,4 +37,14 @@ public class BlockGenerator : MonoBehaviour
         ScoreScript.instance.ScoreManager(scoreDefult);
     }
 
+    //ゲームクリア
+    public void BlocklDestroyed()
+    {
+        totalBlocks--;
+        SceneData.totalBlocks = totalBlocks;
+        if (totalBlocks <= 0)
+        {
+            GameManager.instance.EndGame(totalBlocks);
+        }
+    }
 }

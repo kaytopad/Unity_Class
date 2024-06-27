@@ -41,4 +41,10 @@ public class ScoreScript : MonoBehaviour
     {
         this.scoreText.GetComponent<TextMeshProUGUI>().text = "Score: " + totalScore.ToString();
     }
+
+    //トータルのスコア
+    public int GetCurrentScore()
+    {
+        return totalScore;
+    }
 }

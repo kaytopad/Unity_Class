@@ -5,6 +5,12 @@ using UnityEngine;
 public class Block : MonoBehaviour
 {
     public int score = 10;
+    private BlockGenerator generator;
+
+    private void Start()
+    {
+        generator = FindObjectOfType<BlockGenerator>();
+    }
     //�����ƂԂ������Ƃ��r���g�C�����\�b�h
     private void OnCollisionEnter(Collision collision)
     {
@@ -17,6 +23,8 @@ public class Block : MonoBehaviour
         {
             Debug.LogError("ScoreScript instance is not set.");
         }
+        //トータルブロックの削除メソッド
+        generator.BlocklDestroyed();
         // ゲームオブジェクトを削除
         Destroy(gameObject);
     }

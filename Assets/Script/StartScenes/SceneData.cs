@@ -5,4 +5,6 @@ using UnityEngine;
 public static class SceneData
 {
     public static int score;
+    //ƒuƒƒbƒN‚Ì”
+    public static int totalBlocks;
 }

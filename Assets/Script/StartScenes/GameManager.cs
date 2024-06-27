@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -26,6 +27,13 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("Game");
     }
     //エンドメソッド
+    public void EndGame(int Blocks)
+    {
+        //獲得したスコアとリザルト画面へ遷移
+        SceneData.score = ScoreScript.instance.GetCurrentScore();
+        SceneData.totalBlocks = Blocks;
+        SceneManager.LoadScene("Result");
+    }
     //リスタートメソッド
 
 }
