@@ -35,9 +35,4 @@ public class BlockGenerator : MonoBehaviour
         ScoreScript.instance.ScoreManager(scoreDefult);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
