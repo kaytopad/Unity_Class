@@ -33,4 +33,8 @@ public class ResultSceneController : MonoBehaviour
         }
     }
 
+    public void OnStartButtonPressed()
+    {
+        GameManager.instance.ReturnToStart();
+    }
 }

@@ -35,7 +35,10 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("Result");
     }
     //リスタートメソッド
-    
+    public void ReturnToStart()
+    {
+        SceneManager.LoadScene("Start");
+    }
 
 
 }
