@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,28 +11,24 @@ public class ResultSceneController : MonoBehaviour
     public GameObject scoreTextObject;      //スコア
     public GameObject gameResultObject;     //ゲームオーバーかゲームクリア
 
-    //テキスト
-    private Text scoreText;
-    private Text gameResult;
     // Start is called before the first frame update
     void Start()
     {
         //各種結果をオブジェクトに渡す
-        scoreText = scoreTextObject.GetComponent<Text>();
-        gameResult = gameResultObject.GetComponent<Text>();
 
-        scoreText.text = "SCORE :" + SceneData.score;
+        this.scoreTextObject.GetComponent<TextMeshProUGUI>().text = "SCORE : "+ SceneData.score;
+
 
         //GameOver
         if (SceneData.totalBlocks == 0 )
         {
-            gameResult.text = "GAME CLEAR";
-            gameResult.color = Color.yellow;
+            this.gameResultObject.GetComponent<TextMeshProUGUI>().text= "GAME CLEAR";
+            this.gameResultObject.GetComponent<TextMeshProUGUI>().color = Color.yellow;
         }
         else
         {
-            gameResult.text = "GAME OVER";
-            gameResult.color = Color.red;
+            this.gameResultObject.GetComponent<TextMeshProUGUI>().text = "GAME OVER";
+            this.gameResultObject.GetComponent<TextMeshProUGUI>().color = Color.red;
 
         }
     }
