@@ -38,6 +38,7 @@ public class GameManager : MonoBehaviour
     //リスタートメソッド
     public void ReturnToStart()
     {
+        ResetGame();
         SceneManager.LoadScene("Start");
     }
 
@@ -48,7 +49,7 @@ public class GameManager : MonoBehaviour
         SceneData.totalBlocks = 0;
 
         //すべてのブロックを削除
-        GameObject[] blocks = GameObject.FindGameObjectWithTag("Blocks");
+        GameObject[] blocks = GameObject.FindGameObjectsWithTag("Blocks");
 
         foreach (GameObject block in blocks)
         {
