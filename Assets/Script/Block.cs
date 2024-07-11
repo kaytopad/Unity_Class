@@ -14,18 +14,23 @@ public class Block : MonoBehaviour
     //�����ƂԂ������Ƃ��r���g�C�����\�b�h
     private void OnCollisionEnter(Collision collision)
     {
-        // スコアをScoreScriptに追加
-        if (ScoreScript.instance != null)
+        if (collision.gameObject.CompareTag("Ball"))
         {
-            ScoreScript.instance.ScoreManager(score);
+
+            // スコアをScoreScriptに追加
+            if (ScoreScript.instance != null)
+            {
+                ScoreScript.instance.ScoreManager(score);
+            }
+            else
+            {
+                Debug.LogError("ScoreScript instance is not set.");
+            }
+            GetComponent<AudioSource>().Play();
+            //トータルブロックの削除メソッド
+            generator.BlocklDestroyed();
+            // ゲームオブジェクトを削除
+            Destroy(gameObject);
         }
-        else
-        {
-            Debug.LogError("ScoreScript instance is not set.");
-        }
-        //トータルブロックの削除メソッド
-        generator.BlocklDestroyed();
-        // ゲームオブジェクトを削除
-        Destroy(gameObject);
     }
 }
