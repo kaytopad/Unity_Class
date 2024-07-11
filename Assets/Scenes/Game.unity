@@ -431,6 +431,10 @@ PrefabInstance:
       propertyPath: m_fontSizeBase
       value: 26
       objectReference: {fileID: 0}
+    - target: {fileID: 5024642430005096916, guid: dc22e8bff31e2454c8e0915f0a58e3c1, type: 3}
+      propertyPath: m_TagString
+      value: ScoreText
+      objectReference: {fileID: 0}
     - target: {fileID: 5806533989640030470, guid: dc22e8bff31e2454c8e0915f0a58e3c1, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -697,6 +701,10 @@ PrefabInstance:
     - target: {fileID: 6831783789744853632, guid: 116281f41864a428a93b3751ca16a7e2, type: 3}
       propertyPath: m_Name
       value: ScoreScript
+      objectReference: {fileID: 0}
+    - target: {fileID: 6831783789744853632, guid: 116281f41864a428a93b3751ca16a7e2, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
