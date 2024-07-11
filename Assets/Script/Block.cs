@@ -11,7 +11,6 @@ public class Block : MonoBehaviour
     {
         generator = FindObjectOfType<BlockGenerator>();
     }
-    //�����ƂԂ������Ƃ��r���g�C�����\�b�h
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Ball"))
@@ -22,10 +21,7 @@ public class Block : MonoBehaviour
             {
                 ScoreScript.instance.ScoreManager(score);
             }
-            else
-            {
-                Debug.LogError("ScoreScript instance is not set.");
-            }
+
             GetComponent<AudioSource>().Play();
             //トータルブロックの削除メソッド
             generator.BlocklDestroyed();
